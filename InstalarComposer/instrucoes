@@ -1,0 +1,32 @@
+1) Baixar a última versão do ficheiro composer.phar no site get composer 
+(https://getcomposer.org/download/)e colar dentro do projeto;
+
+2) Criar um ficheiro composer.json e como exemplo podemos adicionar já uma requisição para verificar o funcionamento 
+(Exemplo o PHPMAIL). Podemos aceder ao site https://packagist.org/?query=phpmail pesquisar pelo phpmail e colocamos 
+no composer.json
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
+ 
+3) O Nome do projeto é InstalarComposer: Aceder ao CMD e adicionar cd\
+C:\WINDOWS\system32>cd\
+C:\>cd
+C:\>cd\xampp
+C:\xampp>cd htdocs
+C:\xampp\htdocs>cd InstalarComposer
+C:\xampp\htdocs\InstalarComposer>C:\xampp\php\php.exe composer.phar install
+
+4) Quando quisermos baixar/atualizar alguma dependência podemos criar um ficheiro dentro do projeto 
+como nome atualizarComposer.bat e dentro do ficheiro digitamos C:\xampp\php\php.exe composer.phar update
+
+5) Também podemos fazer no CD:
+C:\xampp\htdocs\InstalarComposer> C:\xampp\php\php.exe composer.phar update
+
+6) composer ficarem numa pasta definida por nós. Por exemplo crio uma pasta Bibliotecas no projeto, e no composer.json defino que a pasta vender do composer deve ficar dentro dessa mesma pasta como também posso definir as class ficarem na pasta model .
+{
+    "require": {"phpmailer/phpmailer": "^6.2"
+    },
+    "config": { "vendor-dir": "Bibliotecas/" },
+    "classmap": ["modelos/"]
